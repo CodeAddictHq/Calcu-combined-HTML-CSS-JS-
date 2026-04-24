@@ -1,0 +1,89 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.button {
+  height: 50px;
+  width: 50px;
+  background-color: lightyellow;
+  border-radius: 6px;
+
+  font-weight: 400;
+  font-size: 125%;
+}
+#display {
+  height: 50px;
+  width: 220px;
+  margin-bottom: 7px;
+  font-weight: 400;
+  font-size: 25px;
+  border: 2px solid white;
+  border-radius: 4px;
+  margin-top: 5px;
+}
+#main {
+  height: 365px;
+  width: 250px;
+  background-color: lightblue;
+  
+  border: 5px solid gray;
+
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+#btns {
+  height: 220px;
+  width: 220px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: space-between;
+  margin-top: 5px;
+}
+
+#parent {
+  height:100vh;
+  width: 100vw;
+  background-color: lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#label {
+  align-self: flex-start;
+  position: relative;
+  left: 15px;
+  border: none;
+  border: 2px solid lightgray;
+  border-radius: 3px;
+  background-color: lightgray;
+}
+#specialbtns {
+  width: 220px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.power {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  margin-right: auto;
+}
+.extrabtn {
+  height: 30px;
+  width: 40px;
+  margin-right: 5px;
+  border-radius: 6px;
+  font-weight: 400;
+  font-size: 125%;
+}
+
+
