@@ -11,5 +11,7 @@ Currently, the calculator works only with mouse clicks or touch input on the dis
 </p>
 
 
+#Fun Fact 🥲
+<p>Do know that? I have wasted my fuccking 2 days in it, why cz i didn't knew 1 function and that is eval() 😭 </p>
 <h2>👨‍💻 Author</h2>
 <p>Adib :)</p>

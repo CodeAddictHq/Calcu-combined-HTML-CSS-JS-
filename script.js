@@ -1,11 +1,14 @@
-import {makenum} from "./engine.js"
-var oprs = document.querySelectorAll(".opr")
+//import {makenum, nums} from "./engine.js"
+
 var power = document.getElementById("on");
 var bulb = document.getElementById("powerbulbof");
+
+let ac = document.getElementById("allclear")
 screen = document.getElementById("display");
 var btns = document.querySelectorAll(".button")
-
-function on() {
+let calculate = document.querySelector("#excute")
+let delbtn = document.querySelector("#del")
+function on(){
   let val = power.innerText
   if (val=="OF") {
     bulb.setAttribute("id", "powerbulbof");
@@ -23,50 +26,61 @@ function on() {
         setTimeout(()=>{
         screen.value = ""
           screen.placeholder= "DO SUM ;)"
-        }, 2000)
-      }, 2000)
-    },1500)
+        }, 500)
+      }, 500)
+    },500)
   }
 }
 
 
 
 function showinscreen(val){
-  if (screen.placeholder == "DO SUM ;)") {
-  }else {
-    let a = screen.value + val
-    screen.value = a
-  }
-}
-
-var counter = 1
-
-function showinscreenopr(val){
-  if (screen.placeholder == "DO SUM ;)") {
+  if (screen.placeholder == "DO SUM ;)") { 
+    screen.value = screen.value + val
   }else{
-    let a = screen.value + val
-    screen.value = a
-    let key = `num${counter}`
-    counter += 1
-    makenum(key, screen.value)
-    
-    
+    }
+  }
+function result(){
+  if (screen.placeholder == "DO SUM ;)") {
+    let a = screen.value 
+    if ((a=="") || (a==null)){
+      screen.value = "SYNTEX err"
+      setTimeout(()=>{
+        screen.value=""
+      }, 1000)
+    }else{
+      try{
+        let a = screen.value
+        let b = a.replaceAll("×", "*")
+        let c = b.replaceAll("÷", "/")
+        screen.value = eval(c)
+      }catch{
+      screen.value = "SYNTEX err"
+      setTimeout(()=>{
+        screen.value=""
+      }, 500)
+      }
+    }
   }
 }
 
 
 power.addEventListener("click", on)
-
-oprs.forEach((val) => {
-  val.addEventListener("click", () =>{
-    let a = val.innerText
-    showinscreenopr(a)
-  });
-});
 btns.forEach((val) => {
   val.addEventListener("click", () =>{
     let a = val.innerText
     showinscreen(a)
   });
 });
-
+calculate.addEventListener("click", result)
+delbtn.addEventListener("click", ()=>{
+  let a = screen.value.length-1
+  let b = screen.value.split("")
+  delete b[a]
+  let c = b.join("")
+  screen.value=c
+  
+})
+ac.addEventListener("click", ()=>{
+  screen.value=""
+})
